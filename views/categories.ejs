@@ -1,0 +1,39 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+<h1>Categories</h1>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/" class="text-dark text-decoration-none">Home</a></li>
+      <li class="breadcrumb-item"><a href="/categories" class="text-dark text-decoration-none">Categories</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Explore Categories</li>
+    </ol>
+  </nav></div>
+  
+<div class="row row-cols-3 row-cols-md-4 g-2 g-lg-3 mb-4">
+ <%if (typeof categories !='undefined' && categories.length > 0){ %> 
+    <%categories.forEach((ele)=>{%> 
+          <a href="/categories/<%- ele.name %> " class="text-center col category__link text-decoration-none text-dark">
+         <div class="category__img--md shadow">
+             <img src="/images/<%- ele.image %> " alt="<%- ele.name %> " loading="lazy">
+         </div>
+         <div class="pt-1"><%- ele.name %> Food</div>
+     </a>
+     <% }) %> 
+     <% } %> </div>
+
+
+     
+    <div class="row row-cols-3 row-cols-lg-5 g-2 g-lg-3">
+      <% if((typeof categoriesByName != "undefined") && categoriesByName.length > 0 ){ %>
+          <% categoriesByName.forEach((ele)=>{ %>
+              <a href="/recipe/<%=ele._id%> " class="text-center col category__link text-decoration-none text-dark">
+                  <div class="category__img category__img--large shadow">
+                      <img src="/images/<%=ele.image%> " alt="<%=ele.name%>" loading="lazy">
+                      <!-- src="images/thai-yellow-curry" -->
+                  </div>
+                  <div class="pt-1">
+                      <%=ele.name%>
+                  </div>
+              </a>
+              <% }) %>
+                  <% } %>
+  </div>

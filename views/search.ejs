@@ -1,0 +1,19 @@
+<h1 class="mb-4">Search</h1>
+
+
+<div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-2 g-lg-3">
+    <% if(recipeBySearch !="" ){ %>
+        <% recipeBySearch.forEach((ele)=>{ %>
+            <a href="/recipe/<%=ele._id%> " class="text-center col category__link text-decoration-none text-dark">
+                <div class="category__img category__img--large shadow">
+                    <img src="images/<%=ele.image%> " alt="<%=ele.name%>" loading="lazy">
+                    <!-- src="images/thai-yellow-curry" -->
+                </div>
+                <div class="pt-1">
+                    <%=ele.name%>
+                </div>
+            </a>
+            <% }) %>
+                <% } %>
+                
+</div>
